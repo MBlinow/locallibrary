@@ -40,6 +40,9 @@ class Book(models.Model):
         Returns url to access a book instance
         """
         return reverse('book-detail', args=[str(self.id)])
+    def display_genre(self):
+        return ','.join([genre.name for genre in self.genre.all()[:3]])
+    display_genre.short_description = 'Genre'
 
 import uuid #Required for unique book instances
 
