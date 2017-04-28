@@ -18,6 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    #url(r'^$', views.index, name='index'),
 ]
 # Use include() to add URLS from the catalog application
 from django.conf.urls import include
