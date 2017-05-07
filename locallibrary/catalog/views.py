@@ -22,3 +22,12 @@ def index(request):
         context={'num_books':num_books,'num_instances':num_instances,'num_instances_available':num_instances_available,'num_authors':num_authors},
 
     )
+
+from django.views import generic
+
+class BookListView(generic.ListView):
+    model = Book
+    paginate_by = 2
+
+class BookDetailView(generic.DetailView):
+    model = Book
